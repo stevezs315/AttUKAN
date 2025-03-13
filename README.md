@@ -46,7 +46,7 @@ python pytorch_predict_fcn.py
   - HRF, Private dataset: `stride_height = 10`, `stride_width = 10`
  
 ### Pretrained Model
-Our pretrained model used in paper are in GoogleDrive[https://drive.google.com/drive/folders/126apXEpe_ZIhmOYQ68N50ZhIonwbcFjP].
+Our pretrained model used in paper are in GoogleDrive(https://drive.google.com/drive/folders/126apXEpe_ZIhmOYQ68N50ZhIonwbcFjP?usp=sharing).
 
 
 ### Quantitative Evaluation  
