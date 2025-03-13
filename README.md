@@ -8,7 +8,7 @@ python prepare_dataset.py
 You can modify the dataset name in the `configuration.txt` file.  
 
 ### Available Datasets  
-[DRIVE](http://www.isi.uu.nl/Research/Databases/DRIVE/),[STARE](http://cecas.clemson.edu/~ahoover/stare/),[CHASE_DB](https://blogs.kingston.ac.uk/retinal/chasedb1/), [HRF](https://www5.cs.fau.de/research/data/fundus-images/)
+[DRIVE](http://www.isi.uu.nl/Research/Databases/DRIVE/), [STARE](http://cecas.clemson.edu/~ahoover/stare/), [CHASE_DB](https://blogs.kingston.ac.uk/retinal/chasedb1/), [HRF](https://www5.cs.fau.de/research/data/fundus-images/)
 
 ## 2. Run the Full Workflow  
 The workflow consists of two main steps:  
@@ -43,7 +43,10 @@ python pytorch_predict_fcn.py
 
 - **Stride settings** for testing:  
   - DRIVE, STARE, CHASE_DB1: `stride_height = 5`, `stride_width = 5`  
-  - HRF, Private dataset: `stride_height = 10`, `stride_width = 10`  
+  - HRF, Private dataset: `stride_height = 10`, `stride_width = 10`
+ 
+### Pretrained Model
+Our pretrained model used in paper are in GoogleDrive[https://drive.google.com/drive/folders/126apXEpe_ZIhmOYQ68N50ZhIonwbcFjP].
 
 
 ### Quantitative Evaluation  
