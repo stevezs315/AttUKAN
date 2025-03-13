@@ -56,9 +56,9 @@ After completing all processes, run the following command to obtain evaluation r
 ```bash
 python evalution.py
 ```  
+### Acknowledgement
+I'm very grateful for my co-first author, Chee Hong Lee's(cheehong200292@gmail.com) diligent efforts and contributions. 
+Many thanks for codes of these baseline backbone networks, including [DUNet](https://github.com/RanSuLab/DUNet-retinal-vessel-detection), [DSCNet](https://github.com/YaoleiQi/DSCNet), [AttUNet](https://github.com/ozan-oktay/Attention-Gated-Networks), [UKAN](https://github.com/CUHK-AIM-Group/U-KAN), [RollingUNet](https://github.com/Jiaoyang45/Rolling-Unet), [MambaUNet](https://github.com/ziyangwang007/Mamba-UNet), [CTFNet](https://github.com/DLWK/CTF-Net), [IterNet](https://github.com/amri369/Pytorch-Iternet), [BCDUNet](https://github.com/rezazad68/BCDU-Net), [UNet++](https://github.com/MrGiovanni/UNetPlusPlus).
+Transforms refer to [torchbiomed](https://github.com/mattmacy/torchbiomed).
 
-## 3. Citation  
-
-## 4. Acknowledgement
-I'm very grateful for my co-first author, Chee Hong Lee's(cheehong200292@gmail.com) diligent efforts and contributions.  
 
