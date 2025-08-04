@@ -432,22 +432,18 @@ class AttUKAN(nn.Module):
     def forward(self, x):
         B = x.shape[0]
 
-        ### Encoder
-        ### Conv Stage
-
-        ### Stage 1
+        # Stage 1
         t1 = F.relu(F.max_pool2d(self.encoder1(x), 2, 2))
 
-        #print(t1.shape)
+        # print(t1.shape)
 
-        ### Stage 2
+        # Stage 2
         t2 = F.relu(F.max_pool2d(self.encoder2(t1), 2, 2))
-        #print(t2.shape)
+        # print(t2.shape)
 
-        ### Stage 3
+        # Stage 3
         t3 = F.relu(F.max_pool2d(self.encoder3(t2), 2, 2))
-        cl_feature = t3
-        #print(t3.shape)
+        # print(t3.shape)
 
         ### Tokenized KAN Stage
         ### Stage 4
@@ -458,8 +454,7 @@ class AttUKAN(nn.Module):
         out = self.norm3(out)
         out = out.reshape(B, H, W, -1).permute(0, 3, 1, 2).contiguous()
         t4 = out
-        # cl_feature = out
-        #print(t4.shape)
+        # print(t4.shape)
 
         ### Bottleneck
 
@@ -468,11 +463,10 @@ class AttUKAN(nn.Module):
             out = blk(out, H, W)
         out = self.norm4(out)
         out = out.reshape(B, H, W, -1).permute(0, 3, 1, 2).contiguous()
-        # cl_feature = out
-        #print(cl_feature.shape)
-        ### Stage 4
+        cl_feature = out
+        # print(cl_feature.shape)
         out = F.relu(F.interpolate(self.decoder1(out), scale_factor=(2, 2), mode='bilinear'))
-        #print(out.shape,t4.shape)
+        # print(out.shape,t4.shape)
         t4 = self.Att4(g=out, x=t4)
         out = torch.add(out, t4)
         _, _, H, W = out.shape
@@ -481,7 +475,7 @@ class AttUKAN(nn.Module):
             out = blk(out, H, W)
 
 
-        ### Stage 3
+        ### Stage 4
         out = self.dnorm3(out)
         out = out.reshape(B, H, W, -1).permute(0, 3, 1, 2).contiguous()
         out = F.relu(F.interpolate(self.decoder2(out), scale_factor=(2, 2), mode='bilinear'))
@@ -497,7 +491,7 @@ class AttUKAN(nn.Module):
         out = self.dnorm4(out)
         out = out.reshape(B, H, W, -1).permute(0, 3, 1, 2).contiguous()
 
-        ##DU
+        # Stage 3
         out = F.relu(F.interpolate(self.decoder3(out), scale_factor=(2, 2), mode='bilinear'))
 
         t2 = self.Att2(g=out, x=t2)
@@ -512,10 +506,7 @@ class AttUKAN(nn.Module):
         x = out
 
         out = self.final(out)
-        #cl_feature = out
-        #print(cl_feature.shape)
-        #out = self.sigmoid(out)
-        if self.iter :
-            return x1, x, out, cl_feature
-        else:
-            return self.sigmoid(out), cl_feature
+        # print(cl_feature.shape)
+        # out = self.sigmoid(out)
+
+        return self.sigmoid(out), cl_feature
