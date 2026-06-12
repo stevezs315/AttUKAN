@@ -5,7 +5,7 @@
 [![Homepage](https://img.shields.io/badge/Homepage-Website-green?logo=googlechrome)](https://stevezs315.github.io/)
 
 
-**Shuang Zeng, Chee Hong Lee, Micky C. Nnamdi, Wenqi Shi, J. Ben Tamo, Hangzhou He, Xinliang Zhang, Qian Chen, May D. Wang, Lei Zhu*, Yanye Lu*, Qiushi Ren***
+**Shuang Zeng, Chee Hong Lee, Micky C. Nnamdi, Wenqi Shi, J. Ben Tamo, Hangzhou He, Xinliang Zhang, Qian Chen, May D. Wang, Lei Zhu*, Yanye Lu*, Qiushi Ren**
 
 *MILab, Department of Biomedical Engineering, Peking University*
 
